@@ -1,3 +1,7 @@
+img {
+    width: 100%;
+}
+
 #gameboard {
     background-color: blue;
     margin: 0 auto;

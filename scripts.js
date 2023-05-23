@@ -1,11 +1,11 @@
 const BOARD_WIDTH = 500;
 const BOARD_HEIGHT = 500;
-const SHIP_WIDTH = 60;
-const SHIP_HEIGHT = 60;
+const SHIP_WIDTH = 40;
+const SHIP_HEIGHT = 40;
 const SHIP_FLOAT = 10;
 const SHIP_MOVEMENT = 10;
-const ALIEN_WIDTH = 30;
-const ALIEN_HEIGHT = 30;
+const ALIEN_WIDTH = 50;
+const ALIEN_HEIGHT = 50;
 
 let gameboard = document.getElementById("gameboard");
 let spaceship = document.getElementById("spaceship");
