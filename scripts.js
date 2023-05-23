@@ -16,6 +16,12 @@ let alien4 = document.getElementById("alien4");
 let alien5 = document.getElementById("alien5");
 let alien6 = document.getElementById("alien6");
 let alien7 = document.getElementById("alien7");
+let alien8 = document.getElementById("alien8");
+let alien9 = document.getElementById("alien9");
+let alien10 = document.getElementById("alien10");
+let alien11 = document.getElementById("alien11");
+let alien12 = document.getElementById("alien12");
+let alien13 = document.getElementById("alien13");
 let left_margin = (BOARD_WIDTH - SHIP_WIDTH) / 2;
 
 gameboard.style.width = BOARD_WIDTH + 'px';
@@ -38,6 +44,18 @@ alien6.style.width = ALIEN_WIDTH + 'px';
 alien6.style.height = ALIEN_HEIGHT + 'px';
 alien7.style.width = ALIEN_WIDTH + 'px';
 alien7.style.height = ALIEN_HEIGHT + 'px';
+alien8.style.width = ALIEN_WIDTH + 'px';
+alien8.style.height = ALIEN_HEIGHT + 'px';
+alien9.style.width = ALIEN_WIDTH + 'px';
+alien9.style.height = ALIEN_HEIGHT + 'px';
+alien10.style.width = ALIEN_WIDTH + 'px';
+alien10.style.height = ALIEN_HEIGHT + 'px';
+alien11.style.width = ALIEN_WIDTH + 'px';
+alien11.style.height = ALIEN_HEIGHT + 'px';
+alien12.style.width = ALIEN_WIDTH + 'px';
+alien12.style.height = ALIEN_HEIGHT + 'px';
+alien13.style.width = ALIEN_WIDTH + 'px';
+alien13.style.height = ALIEN_HEIGHT + 'px';
 
 document.addEventListener('keydown', control);
 
