@@ -1,7 +1,7 @@
 const BOARD_WIDTH = 500;
 const BOARD_HEIGHT = 500;
 const SHIP_WIDTH = 40;
-const SHIP_HEIGHT = 20;
+const SHIP_HEIGHT = 40;
 const SHIP_FLOAT = 10;
 const SHIP_MOVEMENT = 10;
 
