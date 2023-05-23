@@ -1,19 +1,21 @@
 const BOARD_WIDTH = 500;
 const BOARD_HEIGHT = 500;
-const SHIP_WIDTH = 40;
-const SHIP_HEIGHT = 40;
+const SHIP_WIDTH = 60;
+const SHIP_HEIGHT = 60;
 const SHIP_FLOAT = 10;
 const SHIP_MOVEMENT = 10;
-const ALIEN_WIDTH = 50;
-const ALIEN_HEIGHT = 50;
+const ALIEN_WIDTH = 40;
+const ALIEN_HEIGHT = 40;
 
 let gameboard = document.getElementById("gameboard");
 let spaceship = document.getElementById("spaceship");
 let alien1 = document.getElementById("alien1");
 let alien2 = document.getElementById("alien2");
 let alien3 = document.getElementById("alien3");
-let alien4= document.getElementById("alien4");
+let alien4 = document.getElementById("alien4");
 let alien5 = document.getElementById("alien5");
+let alien6 = document.getElementById("alien6");
+let alien7 = document.getElementById("alien7");
 let left_margin = (BOARD_WIDTH - SHIP_WIDTH) / 2;
 
 gameboard.style.width = BOARD_WIDTH + 'px';
@@ -32,6 +34,10 @@ alien4.style.width = ALIEN_WIDTH + 'px';
 alien4.style.height = ALIEN_HEIGHT + 'px';
 alien5.style.width = ALIEN_WIDTH + 'px';
 alien5.style.height = ALIEN_HEIGHT + 'px';
+alien6.style.width = ALIEN_WIDTH + 'px';
+alien6.style.height = ALIEN_HEIGHT + 'px';
+alien7.style.width = ALIEN_WIDTH + 'px';
+alien7.style.height = ALIEN_HEIGHT + 'px';
 
 document.addEventListener('keydown', control);
 
