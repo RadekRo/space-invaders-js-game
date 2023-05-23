@@ -13,8 +13,8 @@ gameboard.style.width = BOARD_WIDTH + 'px';
 gameboard.style.height = BOARD_HEIGHT + 'px';
 spaceship.style.width = SHIP_WIDTH + 'px';
 spaceship.style.height = SHIP_HEIGHT + 'px';
-spaceship.style.left = left_margin + 'px';
 spaceship.style.bottom = SHIP_FLOAT + 'px';
+spaceship.style.left = left_margin + 'px';
 
 document.addEventListener('keydown', control);
 
