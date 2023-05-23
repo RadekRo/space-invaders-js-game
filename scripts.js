@@ -3,6 +3,7 @@ const BOARD_HEIGHT = 500;
 const SHIP_WIDTH = 40;
 const SHIP_HEIGHT = 20;
 const SHIP_FLOAT = 10;
+const SHIP_MOVEMENT = 10;
 
 let gameboard = document.getElementById("gameboard");
 let spaceship = document.getElementById("spaceship");
@@ -30,7 +31,7 @@ function control(event)
 
 function moveLeft() {
     if (left_margin > 0) {
-        left_margin -= 10;
+        left_margin -= SHIP_MOVEMENT;
     } else {
         left_margin = 0;
     }
@@ -39,10 +40,10 @@ function moveLeft() {
 }
 
 function moveRight() {
-    if (left_margin < 460) {
-        left_margin += 10;
+    if (left_margin < (BOARD_WIDTH - SHIP_WIDTH)) {
+        left_margin += SHIP_MOVEMENT;
     } else {
-        left_margin = 460;
+        left_margin = (BOARD_WIDTH - SHIP_WIDTH);
     }
     spaceship.style.left = left_margin + "px";
     console.log("w prawo")
