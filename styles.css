@@ -2,6 +2,7 @@
     background-color: blue;
     margin: 0 auto;
     position: relative;
+    display: block;
 }
 
 #spaceship {
@@ -9,22 +10,3 @@
     margin: 0 auto;
 }
 
-#alien1 {
-    
-}
-
-#alien2 {
-    
-}
-
-#alien3 {
-    
-}
-
-#alien4 {
-    
-}
-
-#alien5 {
-    
-}
