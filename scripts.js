@@ -1,6 +1,6 @@
 gameboard = document.getElementById("gamebord");
 spaceship = document.getElementById("spaceship");
-left_marigin = 230
+left_margin = 230
 
 document.addEventListener('keydown', control);
 
@@ -16,13 +16,21 @@ function control(event)
 }
 
 function moveLeft() {
-    left_marigin -= 10
-    spaceship.style.left = left_marigin + "px"
+    if (left_margin > 0) {
+        left_margin -= 10;
+    } else {
+        left_margin = 0;
+    }
+    spaceship.style.left = left_margin + "px";
     console.log("w lewo")
 }
 
 function moveRight() {
-    left_marigin += 10
-    spaceship.style.left = left_marigin + "px"
+    if (left_margin < 460) {
+        left_margin += 10;
+    } else {
+        left_margin = 460;
+    }
+    spaceship.style.left = left_margin + "px";
     console.log("w prawo")
 }
