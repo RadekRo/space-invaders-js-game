@@ -2,10 +2,12 @@ const BOARD_WIDTH = 500;
 const BOARD_HEIGHT = 500;
 const SHIP_WIDTH = 60;
 const SHIP_HEIGHT = 60;
-const SHIP_FLOAT = 10;
+const SHIP_FLOAT = 0;
 const SHIP_MOVEMENT = 10;
 const ALIEN_WIDTH = 40;
 const ALIEN_HEIGHT = 40;
+const SHIELD_HEIGHT = 40;
+const SHIELD_WIDTH = 60;
 
 let gameboard = document.getElementById("gameboard");
 let spaceship = document.getElementById("spaceship");
@@ -42,6 +44,10 @@ let alien30 = document.getElementById("alien30");
 let alien31 = document.getElementById("alien31");
 let alien32 = document.getElementById("alien32");
 let alien33 = document.getElementById("alien33");
+let shield0 = document.getElementById("shield0");
+let shield1 = document.getElementById("shield1");
+let shield2 = document.getElementById("shield2");
+let shield3 = document.getElementById("shield3");
 
 
 let left_margin = (BOARD_WIDTH - SHIP_WIDTH) / 2;
@@ -118,6 +124,14 @@ alien32.style.width = ALIEN_WIDTH + 'px';
 alien32.style.height = ALIEN_HEIGHT + 'px';
 alien33.style.width = ALIEN_WIDTH + 'px';
 alien33.style.height = ALIEN_HEIGHT + 'px';
+shield0.style.height = SHIELD_HEIGHT + 'px';
+shield0.style.width = SHIELD_WIDTH + 'px';
+shield1.style.height = SHIELD_HEIGHT + 'px';
+shield1.style.width = SHIELD_WIDTH + 'px';
+shield2.style.height = SHIELD_HEIGHT + 'px';
+shield2.style.width = SHIELD_WIDTH + 'px';
+shield3.style.height = SHIELD_HEIGHT + 'px';
+shield3.style.width = SHIELD_WIDTH + 'px';
 
 
 
