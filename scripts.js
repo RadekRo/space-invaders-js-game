@@ -8,8 +8,15 @@ const ALIEN_WIDTH = 40;
 const ALIEN_HEIGHT = 40;
 const SHIELD_HEIGHT = 40;
 const SHIELD_WIDTH = 60;
-const delayInMilliseconds = 1000;
+const delayInMilliseconds_first_row = 700;
+const delayInMilliseconds_second_row = 400;
+const delayInMilliseconds_third_row = 200;
+const delayInMilliseconds_fourth_row = 500;
+const delayInMilliseconds_fifth_row = 300;
 const ALIEN_MOVE_HORIZONTAL = 5;
+let direction = "left";
+const how_many = 20;
+let which_move = 0
 
 let gameboard = document.getElementById("gameboard");
 let spaceship = document.getElementById("spaceship");
@@ -53,7 +60,7 @@ let shield3 = document.getElementById("shield3");
 
 
 let left_margin = (BOARD_WIDTH - SHIP_WIDTH) / 2;
-let alien1_margin = 20;
+
 
 gameboard.style.width = BOARD_WIDTH + 'px';
 gameboard.style.height = BOARD_HEIGHT + 'px';
@@ -171,16 +178,11 @@ function moveRight() {
     console.log("w prawo")
 }
 
-let direction = "left";
-let how_many = 7;
-let which_move = 0
-
-setInterval(function moveAlien() {
+setInterval(function moveAlien_first_row() {
     aliens_first_row = []
     for (let i=1; i<8; i++){
     aliens_first_row.push(document.getElementById("alien"+i))
     }
-
     aliens_first_row.forEach(alien => {
         let left = alien.style.left.slice(0,-2)*1  
         if (direction == "left") {
@@ -199,8 +201,104 @@ setInterval(function moveAlien() {
             }
         }
     })
-
-    }, delayInMilliseconds);
+    }, delayInMilliseconds_first_row);
     
+setInterval(function move_Alien_second_row() {
+    aliens_second_row = []
+    for (let i=8; i<14; i++){
+    aliens_second_row.push(document.getElementById("alien"+i))
+    }
+    aliens_second_row.forEach(alien => {
+        let left = alien.style.left.slice(0,-2)*1  
+        if (direction == "left") {
+            left -= ALIEN_MOVE_HORIZONTAL      
+        } else {
+            left += ALIEN_MOVE_HORIZONTAL
+        }
+        alien.style.left = left + "px"
+        if (++ which_move > how_many) {
+            which_move = 0
+            if(direction == "left"){
+                direction = "right"
+            }
+            else {
+                direction = "left"
+            }
+        }
+    })
+ }, delayInMilliseconds_second_row);
 
+setInterval(function move_Alien_third_row() {
+    aliens_third_row = []
+    for (let i=14; i<21; i++){
+    aliens_third_row.push(document.getElementById("alien"+i))
+    }
+    aliens_third_row.forEach(alien => {
+        let left = alien.style.left.slice(0,-2)*1  
+        if (direction == "left") {
+            left -= ALIEN_MOVE_HORIZONTAL      
+        } else {
+            left += ALIEN_MOVE_HORIZONTAL
+        }
+        alien.style.left = left + "px"
+        if (++ which_move > how_many) {
+            which_move = 0
+            if(direction == "left"){
+                direction = "right"
+            }
+            else {
+                direction = "left"
+            }
+        }
+    })
+}, delayInMilliseconds_third_row);
 
+setInterval(function move_Alien_fourth_row() {
+    aliens_fourth_row = []
+    for (let i=21; i<27; i++){
+    aliens_fourth_row.push(document.getElementById("alien"+i))
+    }
+    aliens_fourth_row.forEach(alien => {
+        let left = alien.style.left.slice(0,-2)*1  
+        if (direction == "left") {
+            left -= ALIEN_MOVE_HORIZONTAL      
+        } else {
+            left += ALIEN_MOVE_HORIZONTAL
+        }
+        alien.style.left = left + "px"
+        if (++ which_move > how_many) {
+            which_move = 0
+            if(direction == "left"){
+                direction = "right"
+            }
+            else {
+                direction = "left"
+            }
+        }
+    })
+}, delayInMilliseconds_fourth_row);
+
+setInterval(function move_Alien_fifth_row() {
+    aliens_fifth_row = []
+    for (let i=27; i<34; i++){
+    aliens_fifth_row.push(document.getElementById("alien"+i))
+    }
+    aliens_fifth_row.forEach(alien => {
+        let left = alien.style.left.slice(0,-2)*1  
+        if (direction == "left") {
+            left -= ALIEN_MOVE_HORIZONTAL      
+        } else {
+            left += ALIEN_MOVE_HORIZONTAL
+        }
+        alien.style.left = left + "px"
+        if (++ which_move > how_many) {
+            which_move = 0
+            if(direction == "left"){
+                direction = "right"
+            }
+            else {
+                direction = "left"
+            }
+        }
+    })
+}, delayInMilliseconds_fifth_row);

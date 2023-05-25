@@ -12,7 +12,6 @@ img {
 #spaceship {
     position: absolute;
     margin: 0 auto;
-    
 }
 
 .alien_first_row {
@@ -20,153 +19,27 @@ img {
     top: 0;
 }
 
-
-#alien8 {
+.alien_second_row {
     position: absolute;
     top: 40px;
 }
 
-#alien9 {
-    position: absolute;
-    top: 40px;
-}
-
-#alien10 {
-    position: absolute;
-    top: 40px;
-}
-
-#alien11 {
-    position: absolute;
-    top: 40px;
-}
-
-#alien12 {
-    position: absolute;
-    top: 40px;
-}
-
-#alien13 {
-    position: absolute;
-    top: 40px;
-}
-
-#alien14 {
+.alien_third_row {
     position: absolute;
     top: 80px;
 }
 
-#alien15 {
-    position: absolute;
-    top: 80px;
-}
-
-#alien16 {
-    position: absolute;
-    top: 80px;
-}
-
-#alien17 {
-    position: absolute;
-    top: 80px;
-}
-
-#alien18 {
-    position: absolute;
-    top: 80px;
-}
-
-#alien19 {
-    position: absolute;
-    top: 80px;
-}
-
-#alien20 {
-    position: absolute;
-    top: 80px;
-}
-
-#alien21 {
+.alien_fourth_row {
     position: absolute;
     top: 120px;
 }
 
-#alien22 {
-    position: absolute;
-    top: 120px;
-}
-
-#alien23 {
-    position: absolute;
-    top: 120px;
-}
-
-#alien24 {
-    position: absolute;
-    top: 120px;
-}
-
-#alien25 {
-    position: absolute;
-    top: 120px;
-}
-
-#alien26 {
-    position: absolute;
-    top: 120px;
-}
-
-#alien27 {
+.alien_fifth_row {
     position: absolute;
     top: 160px;
 }
 
-#alien28 {
-    position: absolute;
-    top: 160px;
-}
-
-#alien29 {
-    position: absolute;
-    top: 160px;
-}
-
-#alien30 {
-    position: absolute;
-    top: 160px;
-}
-
-#alien31 {
-    position: absolute;
-    top: 160px;
-}
-
-#alien32 {
-    position: absolute;
-    top: 160px;
-}
-
-#alien33 {
-    position: absolute;
-    top: 160px;
-}
-
-#shield0 {
-    position: absolute;
-    top: 400px;
-}
-
-#shield1 {
-    position: absolute;
-    top: 400px;
-}
-
-#shield2 {
-    position: absolute;
-    top: 400px;
-}
-
-#shield3 {
+.shield {
     position: absolute;
     top: 400px;
 }
