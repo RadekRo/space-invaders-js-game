@@ -53,7 +53,7 @@ let shield3 = document.getElementById("shield3");
 
 
 let left_margin = (BOARD_WIDTH - SHIP_WIDTH) / 2;
-let alien1_margin = 50;
+let alien1_margin = 20;
 
 gameboard.style.width = BOARD_WIDTH + 'px';
 gameboard.style.height = BOARD_HEIGHT + 'px';
@@ -171,11 +171,36 @@ function moveRight() {
     console.log("w prawo")
 }
 
-setTimeout(function moveAlien() {
-    if (alien1_margin > 0) {
-    alien1_margin = alien1_margin - ALIEN_MOVE_HORIZONTAL
-    alien1.style.left = alien1_margin + "px";
+let direction = "left";
+let how_many = 7;
+let which_move = 0
+
+setInterval(function moveAlien() {
+    aliens_first_row = []
+    for (let i=1; i<8; i++){
+    aliens_first_row.push(document.getElementById("alien"+i))
+    }
+
+    aliens_first_row.forEach(alien => {
+        let left = alien.style.left.slice(0,-2)*1  
+        if (direction == "left") {
+            left -= ALIEN_MOVE_HORIZONTAL      
+        } else {
+            left += ALIEN_MOVE_HORIZONTAL
+        }
+        alien.style.left = left + "px"
+        if (++ which_move > how_many) {
+            which_move = 0
+            if(direction == "left"){
+                direction = "right"
+            }
+            else {
+                direction = "left"
+            }
+        }
+    })
+
+    }, delayInMilliseconds);
     
-    } 
-    console.log("aliens to the left")
-}, delayInMilliseconds);
+
+

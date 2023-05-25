@@ -12,42 +12,15 @@ img {
 #spaceship {
     position: absolute;
     margin: 0 auto;
+    
 }
 
-#alien1 {
+.alien_first_row {
     position: absolute;
     top: 0;
 }
 
-#alien2 {
-    position: absolute;
-    top: 0;
-}
 
-#alien3 {
-    position: absolute;
-    top: 0;
-}
-
-#alien4 {
-    position: absolute;
-    top: 0;
-}
-
-#alien5 {
-    position: absolute;
-    top: 0;
-}
-
-#alien6 {
-    position: absolute;
-    top: 0;
-}
-
-#alien7 {
-    position: absolute;
-    top: 0;
-}
 #alien8 {
     position: absolute;
     top: 40px;
