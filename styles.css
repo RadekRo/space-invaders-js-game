@@ -16,27 +16,27 @@ img {
 
 .alien_first_row {
     position: absolute;
-    top: 0;
+    top: 40px;
 }
 
 .alien_second_row {
     position: absolute;
-    top: 40px;
+    top: 80px;
 }
 
 .alien_third_row {
     position: absolute;
-    top: 80px;
+    top: 120px;
 }
 
 .alien_fourth_row {
     position: absolute;
-    top: 120px;
+    top: 160px;
 }
 
 .alien_fifth_row {
     position: absolute;
-    top: 160px;
+    top: 200px;
 }
 
 .shield {

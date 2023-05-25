@@ -14,10 +14,11 @@ const delayInMilliseconds_third_row = 200;
 const delayInMilliseconds_fourth_row = 500;
 const delayInMilliseconds_fifth_row = 300;
 const ALIEN_MOVE_HORIZONTAL = 5;
-let direction = "left";
 const how_many = 20;
-let which_move = 0
 
+let which_move = 0
+let direction = "left";
+let left_margin = (BOARD_WIDTH - SHIP_WIDTH) / 2;
 let gameboard = document.getElementById("gameboard");
 let spaceship = document.getElementById("spaceship");
 let alien1 = document.getElementById("alien1");
@@ -57,9 +58,6 @@ let shield0 = document.getElementById("shield0");
 let shield1 = document.getElementById("shield1");
 let shield2 = document.getElementById("shield2");
 let shield3 = document.getElementById("shield3");
-
-
-let left_margin = (BOARD_WIDTH - SHIP_WIDTH) / 2;
 
 
 gameboard.style.width = BOARD_WIDTH + 'px';
@@ -142,8 +140,6 @@ shield2.style.height = SHIELD_HEIGHT + 'px';
 shield2.style.width = SHIELD_WIDTH + 'px';
 shield3.style.height = SHIELD_HEIGHT + 'px';
 shield3.style.width = SHIELD_WIDTH + 'px';
-
-
 
 document.addEventListener('keydown', control);
 
