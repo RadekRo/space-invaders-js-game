@@ -8,6 +8,8 @@ const ALIEN_WIDTH = 40;
 const ALIEN_HEIGHT = 40;
 const SHIELD_HEIGHT = 40;
 const SHIELD_WIDTH = 60;
+const delayInMilliseconds = 1000;
+const ALIEN_MOVE_HORIZONTAL = 5;
 
 let gameboard = document.getElementById("gameboard");
 let spaceship = document.getElementById("spaceship");
@@ -51,6 +53,7 @@ let shield3 = document.getElementById("shield3");
 
 
 let left_margin = (BOARD_WIDTH - SHIP_WIDTH) / 2;
+let alien1_margin = 50;
 
 gameboard.style.width = BOARD_WIDTH + 'px';
 gameboard.style.height = BOARD_HEIGHT + 'px';
@@ -167,3 +170,12 @@ function moveRight() {
     spaceship.style.left = left_margin + "px";
     console.log("w prawo")
 }
+
+setTimeout(function moveAlien() {
+    if (alien1_margin > 0) {
+    alien1_margin = alien1_margin - ALIEN_MOVE_HORIZONTAL
+    alien1.style.left = alien1_margin + "px";
+    
+    } 
+    console.log("aliens to the left")
+}, delayInMilliseconds);
