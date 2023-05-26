@@ -1,3 +1,4 @@
+
 // const BOARD_WIDTH = 500;
 // const BOARD_HEIGHT = 500;
 // const SHIP_WIDTH = 60;
@@ -320,17 +321,39 @@
 
 // ================================================ NEW OPENING ========================================================
 
+const fps = 60;
 const canvas = document.getElementById('gameboard');
-ctx = canvas.getContext('2d');
+let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
 
 const background = new Image();
 background.src = 'images/background.jpg';
 
+class CreatePlayer {
+    constructor(canvas, speed) {
+        this.canvas = canvas;
+        this.speed = speed;
+
+        this.width = 65;
+        this.height = 65;
+        this.x = canvas.width / 2 - this.width / 2;
+        this.y = canvas.height - 75;
+        this.image = new Image();
+        this.image.src = 'images/player_ship.png';
+    }
+    draw(ctx) {
+        ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
+    }
+}
+
+
+const player = new CreatePlayer(canvas, 3);
+player.x = 10
 
 function game() {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    player.draw(ctx)
 }
 
-setInterval(game, 1000 / 60);
+setInterval(game, 1000/fps);
