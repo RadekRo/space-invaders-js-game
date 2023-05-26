@@ -320,8 +320,17 @@
 
 // ================================================ NEW OPENING ========================================================
 
+const canvas = document.getElementById('gameboard');
+ctx = canvas.getContext('2d');
+canvas.height = 600;
+canvas.width = 600;
+
+const background = new Image();
+background.src = 'images/background.jpg';
+
+
 function game() {
-    //console.log('game')
+    ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 }
 
-setInterval(game, 1000 / 60)
+setInterval(game, 1000 / 60);
