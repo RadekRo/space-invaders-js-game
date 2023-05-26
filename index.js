@@ -319,3 +319,9 @@
 // }, delayInMilliseconds_first_row);
 
 // ================================================ NEW OPENING ========================================================
+
+function game() {
+    //console.log('game')
+}
+
+setInterval(game, 1000 / 60)
