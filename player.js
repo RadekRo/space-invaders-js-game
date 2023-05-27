@@ -2,6 +2,8 @@ export default class CreatePlayer {
 
     leftPressed = false;
     rightPressed = false;
+    upPressed = false;
+    downPressed = false;
     shootPressed = false;
 
     constructor(canvas, speed, bulletController) {
@@ -36,6 +38,13 @@ export default class CreatePlayer {
         else if (this.x > this.canvas.width - this.width) {
             this.x = this.canvas.width - this.width;
         }
+
+        if (this.y < 0) {
+            this.y = 0;
+        }
+        else if (this.y > this.canvas.height - this.height) {
+            this.y = this.canvas.height - this.height;
+        }
     }
 
     move() {
@@ -45,6 +54,12 @@ export default class CreatePlayer {
         else if (this.leftPressed) {
             this.x -= this.speed;
         }
+        else if (this.upPressed) {
+            this.y -= this.speed;
+        }
+        else if (this.downPressed) {
+            this.y += this.speed;
+        }
     }
 
     keydown = (event) => {
@@ -53,6 +68,12 @@ export default class CreatePlayer {
         }
         if (event.code == "ArrowRight") {
             this.rightPressed = true;
+        }
+        if (event.code == "ArrowUp") {
+            this.upPressed = true;
+        }
+        if (event.code == "ArrowDown") {
+            this.downPressed = true;
         }
         if (event.code == "Space") {
             this.shootPressed = true;
@@ -65,6 +86,12 @@ export default class CreatePlayer {
         }
         if (event.code == "ArrowRight") {
             this.rightPressed = false;
+        }
+        if (event.code == "ArrowUp") {
+            this.upPressed = false;
+        }
+        if (event.code == "ArrowDown") {
+            this.downPressed = false;
         }
         if (event.code == "Space") {
             this.shootPressed = false;

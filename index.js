@@ -325,12 +325,14 @@ import bulletController from './bulletController.js';
 
 const fps = 60;
 const canvas = document.getElementById('gameboard');
-const button = document.getElementById('soundOff');
 const sound = new Audio('sounds/music.mp3');
 sound.volume = 0.5;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
+
+const intro = new Image();
+intro.src = 'images/intro.jpg';
 
 const background = new Image();
 background.src = 'images/background.jpg';
@@ -345,4 +347,4 @@ function game() {
     sound.play();
 }
 
-setInterval(game, 1000/fps);
+setInterval(game, 1000/fps)
