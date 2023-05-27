@@ -57,14 +57,25 @@ export default class AliensController {
                 this.currentDirection = MovingDirection.downLeft;
                 break;
             }
-        }
-        else if(this.currentDirection === MovingDirection.downLeft){
-            if (this.moveDown(MovingDirection.left)){
+        } else if (this.currentDirection === MovingDirection.downLeft) {
+            if (this.moveDown(MovingDirection.left)) {
                 break;
             }
+        } else if (this.currentDirection === MovingDirection.left) {
+            this.xVelocity = -this.defaultXVelocity;
+            this.yVelocity = 0;
+            const leftMostAlien = alienRow[0];
+            if (leftMostAlien.x <= 0) {
+                this.currentDirection = MovingDirection.downRight;
+                break
+            }
+        } else if (this.currentDirection === MovingDirection.downRight) {
+            if (this.moveDown(MovingDirection.right)) {
+                break;
         }
        } 
     }
+}
 
     moveDown(newDirection) {
         this.xVelocity = 0;
