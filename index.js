@@ -338,7 +338,7 @@ const background = new Image();
 background.src = 'images/background.jpg';
 
 const playerBulletController = new bulletController(canvas, 10, "red", true);
-const player = new CreatePlayer(canvas, 4, playerBulletController);
+const player = new CreatePlayer(canvas, 3, playerBulletController);
 
 function game() {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);

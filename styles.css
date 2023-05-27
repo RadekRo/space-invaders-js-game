@@ -72,6 +72,12 @@ h1 span {
     color: black;
 }
 
+h2 {
+    color: white;
+    font-size: 1.3em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 button {
     color: red;
     position: absolute;
