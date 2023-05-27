@@ -326,7 +326,7 @@ import bulletController from './bulletController.js';
 const fps = 60;
 const canvas = document.getElementById('gameboard');
 const sound = new Audio('sounds/music.mp3');
-sound.volume = 0.5;
+sound.volume = 0.0;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
