@@ -320,8 +320,10 @@
 // }, delayInMilliseconds_first_row);
 
 // ================================================ NEW OPENING ========================================================
+;
 import CreatePlayer from './player.js';
 import bulletController from './bulletController.js';
+import AliensController from "./AliensController.js";
 
 const fps = 60;
 const canvas = document.getElementById('gameboard');
@@ -337,11 +339,14 @@ intro.src = 'images/intro.jpg';
 const background = new Image();
 background.src = 'images/background.jpg';
 
+const alienController = new AliensController(canvas);
+
 const playerBulletController = new bulletController(canvas, 10, "red", true);
 const player = new CreatePlayer(canvas, 3, playerBulletController);
 
 function game() {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    alienController.draw(ctx);
     player.draw(ctx)
     playerBulletController.draw(ctx);
     sound.play();
