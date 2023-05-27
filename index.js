@@ -320,7 +320,7 @@
 // }, delayInMilliseconds_first_row);
 
 // ================================================ NEW OPENING ========================================================
-import CreatePlayer from './player.js'
+import CreatePlayer from './player.js';
 
 const fps = 60;
 const canvas = document.getElementById('gameboard');

@@ -2,10 +2,12 @@ export default class CreatePlayer {
 
     leftPressed = false;
     rightPressed = false;
+    shootPressed = false;
 
-    constructor(canvas, speed) {
+    constructor(canvas, speed, bulletController) {
         this.canvas = canvas;
         this.speed = speed;
+        this.bulletController = bulletController;
 
         this.width = 42;
         this.height = 50;
@@ -19,6 +21,9 @@ export default class CreatePlayer {
     }
 
     draw(ctx) {
+        if(this.shootPressed) {
+            this.bulletController.shoot(this.x + this.width / 2, this.y, 4, 10);
+        }
         this.move();
         this.collideWithEdge();
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
@@ -50,8 +55,9 @@ export default class CreatePlayer {
             this.rightPressed = true;
         }
         if (event.code == "Space") {
-            console.log('shoot')
+            this.shootPressed = true;
         }
+
     }
     keyup = (event) => {
         if (event.code == "ArrowLeft") {
@@ -59,6 +65,9 @@ export default class CreatePlayer {
         }
         if (event.code == "ArrowRight") {
             this.rightPressed = false;
+        }
+        if (event.code == "Space") {
+            this.shootPressed = false;
         }
     }
 };
