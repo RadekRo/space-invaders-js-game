@@ -325,6 +325,9 @@ import bulletController from './bulletController.js';
 
 const fps = 60;
 const canvas = document.getElementById('gameboard');
+const button = document.getElementById('soundOff');
+const sound = new Audio('sounds/music.mp3');
+sound.volume = 0.5;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
@@ -339,6 +342,7 @@ function game() {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     player.draw(ctx)
     playerBulletController.draw(ctx);
+    sound.play();
 }
 
 setInterval(game, 1000/fps);
