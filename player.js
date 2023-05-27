@@ -7,8 +7,8 @@ export default class CreatePlayer {
         this.canvas = canvas;
         this.speed = speed;
 
-        this.width = 50;
-        this.height = 60;
+        this.width = 42;
+        this.height = 50;
         this.x = canvas.width / 2 - this.width / 2;
         this.y = canvas.height - 75;
         this.image = new Image();
@@ -48,6 +48,9 @@ export default class CreatePlayer {
         }
         if (event.code == "ArrowRight") {
             this.rightPressed = true;
+        }
+        if (event.code == "Space") {
+            console.log('shoot')
         }
     }
     keyup = (event) => {
