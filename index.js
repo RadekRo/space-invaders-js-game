@@ -320,6 +320,7 @@
 // }, delayInMilliseconds_first_row);
 
 // ================================================ NEW OPENING ========================================================
+import CreatePlayer from './player.js'
 
 const fps = 60;
 const canvas = document.getElementById('gameboard');
@@ -330,26 +331,7 @@ canvas.width = 600;
 const background = new Image();
 background.src = 'images/background.jpg';
 
-class CreatePlayer {
-    constructor(canvas, speed) {
-        this.canvas = canvas;
-        this.speed = speed;
-
-        this.width = 65;
-        this.height = 65;
-        this.x = canvas.width / 2 - this.width / 2;
-        this.y = canvas.height - 75;
-        this.image = new Image();
-        this.image.src = 'images/player_ship.png';
-    }
-    draw(ctx) {
-        ctx.drawImage(this.image, this.x, this.y, this.width, this.height)
-    }
-}
-
-
-const player = new CreatePlayer(canvas, 3);
-player.x = 10
+const player = new CreatePlayer(canvas, 4);
 
 function game() {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
