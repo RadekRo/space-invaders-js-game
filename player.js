@@ -29,6 +29,7 @@ export default class CreatePlayer {
         this.move();
         this.collideWithEdge();
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        console.log(this.upPressed, this.downPressed, this.leftPressed, this.rightPressed)
     }
 
     collideWithEdge() {
@@ -54,7 +55,8 @@ export default class CreatePlayer {
         else if (this.leftPressed) {
             this.x -= this.speed;
         }
-        else if (this.upPressed) {
+        
+        if (this.upPressed) {
             this.y -= this.speed;
         }
         else if (this.downPressed) {
