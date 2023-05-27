@@ -321,6 +321,7 @@
 
 // ================================================ NEW OPENING ========================================================
 import CreatePlayer from './player.js';
+import bulletController from './bulletController.js';
 
 const fps = 60;
 const canvas = document.getElementById('gameboard');
@@ -331,11 +332,13 @@ canvas.width = 600;
 const background = new Image();
 background.src = 'images/background.jpg';
 
-const player = new CreatePlayer(canvas, 4);
+const playerBulletController = new bulletController(canvas, 10, "red", true);
+const player = new CreatePlayer(canvas, 4, playerBulletController);
 
 function game() {
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     player.draw(ctx)
+    playerBulletController.draw(ctx);
 }
 
 setInterval(game, 1000/fps);
