@@ -14,7 +14,7 @@ const intro = new Image();
 intro.src = 'images/intro.jpg';
 
 const background = new Image();
-background.src = 'images/background.jpg';
+background.src = 'images/mars.jpg';
 
 const playerBulletController = new bulletController(canvas, 10, "red", true);
 const alienBulletController = new bulletController(canvas, 5, "blue", false);
