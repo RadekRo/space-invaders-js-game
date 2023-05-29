@@ -5,7 +5,7 @@ import AliensController from "./AliensController.js";
 const fps = 60;
 const canvas = document.getElementById('gameboard');
 const sound = new Audio('sounds/music.mp3');
-sound.volume = 0.0;
+sound.volume = 0.03;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
@@ -57,6 +57,10 @@ function checkGameOver() {
         isGameOver = true;
     }
     if(alienController.collideWith(player)) {
+        isGameOver = true;
+    }
+    if(alienController.aliensRows.length === 0) {
+        didWin = true;
         isGameOver = true;
     }
 }
