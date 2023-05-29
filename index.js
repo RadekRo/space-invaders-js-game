@@ -55,12 +55,13 @@ function displayGameOver() {
         ctx.fillStyle = "red";
         ctx.font = "65px Verdana";
         ctx.fillText(text, canvas.width / textOffset, canvas.height / 2);
-
-        text = "Game over.";
-        textOffset = 3.7;
-        ctx.fillStyle = "yellow";
-        ctx.font = "50px Verdana";
-        ctx.fillText(text, canvas.width / textOffset, canvas.height / 2 + 55);
+        if (!didWin) {
+            text = "Game over.";
+            textOffset = 3.7;
+            ctx.fillStyle = "yellow";
+            ctx.font = "50px Verdana";
+            ctx.fillText(text, canvas.width / textOffset, canvas.height / 2 + 55);
+        }
     }
 }
 
