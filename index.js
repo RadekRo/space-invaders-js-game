@@ -5,12 +5,12 @@ import AliensController from "./AliensController.js";
 const fps = 60;
 const canvas = document.getElementById('gameboard');
 const sound = new Audio('sounds/music.mp3');
-sound.volume = 0.1;
+sound.volume = 0.09;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
 
-const background = new Image();
+let background = new Image();
 background.src = 'images/background.jpg';
     
 let playerBulletController = new bulletController(canvas, 10, "red", true);
@@ -55,6 +55,7 @@ function checkLevelChange() {
         level ++;
         console.log(level)
         console.log("Next level on") 
+        background.src = 'images/earth_from_moon.jpg';
         playerBulletController = new bulletController(canvas, 10, "red", true);
         alienBulletController = new bulletController(canvas, 5, "blue", false);
         alienController = new AliensController(canvas, 
