@@ -25,6 +25,8 @@ export default class AliensController {
         this.canvas = canvas;
         this.alienBulletController = alienBulletController;
         this.playerBulletController = playerBulletController;
+        this.alienDeatSound = new Audio('sounds/alienDeathSound.mp3')
+        this.alienDeatSound.volume = 0.5;
         this.createAliens();
     }
 
@@ -41,7 +43,8 @@ export default class AliensController {
         this.aliensRows.forEach(alienRow=>{
             alienRow.forEach((alien, alienIndex)=>{
                 if(this.playerBulletController.collideWith(alien)) {
-                    //play a sound
+                    this.alienDeatSound.currentTime = 0;
+                    this.alienDeatSound.play();
                     alienRow.splice(alienIndex,1)
                 }
             });
@@ -57,7 +60,6 @@ export default class AliensController {
             const alienIndex = Math.floor(Math.random() * allAliens.length);
             const alien = allAliens[alienIndex];
             this.alienBulletController.shoot(alien.x, alien.y, -3);
-            console.log(alienIndex);
         }
     }
     resetMoveDownTimer() {
