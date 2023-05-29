@@ -50,11 +50,17 @@ function game() {
 
 function displayGameOver() {
     if(isGameOver) {
-        let text = didWin ? "You win" : "Game Over";
-        let textOffset = didWin ? 3.5 : 5;
+        let text = didWin ? "You win" : "You are dead.";
+        let textOffset = didWin ? 3.5 : 6.2;
         ctx.fillStyle = "red";
         ctx.font = "65px Verdana";
         ctx.fillText(text, canvas.width / textOffset, canvas.height / 2);
+
+        text = "Game over.";
+        textOffset = 3.7;
+        ctx.fillStyle = "yellow";
+        ctx.font = "50px Verdana";
+        ctx.fillText(text, canvas.width / textOffset, canvas.height / 2 + 55);
     }
 }
 
