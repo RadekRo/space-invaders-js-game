@@ -5,13 +5,15 @@ import AliensController from "./AliensController.js";
 const fps = 60;
 const canvas = document.getElementById('gameboard');
 const sound = new Audio('sounds/music.mp3');
-sound.volume = 0.09;
+const background_graphics = ['earth', 'earth_from_moon', 'outer_space', 'mars'];
+
+sound.volume = 0.01;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
 
 let background = new Image();
-background.src = 'images/background.jpg';
+background.src = 'images/' + background_graphics[0] + '.jpg';
     
 let playerBulletController = new bulletController(canvas, 10, "red", true);
 let alienBulletController = new bulletController(canvas, 5, "blue", false);
@@ -53,9 +55,13 @@ function displayGameOver() {
 function checkLevelChange() {
     if(alienController.aliensRows.length === 0) {
         level ++;
-        console.log(level)
-        console.log("Next level on") 
-        background.src = 'images/earth_from_moon.jpg';
+        if (level > background_graphics.length) {
+            didWin = true;
+            isGameOver = true;
+            return;
+        }
+        background.src = 'images/' + background_graphics[level - 1] + '.jpg';
+
         playerBulletController = new bulletController(canvas, 10, "red", true);
         alienBulletController = new bulletController(canvas, 5, "blue", false);
         alienController = new AliensController(canvas, 
