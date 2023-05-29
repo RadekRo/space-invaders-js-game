@@ -6,8 +6,8 @@ export default class AliensController {
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
         [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-        [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+        [4, 4, 4, 4, 4, 4, 4, 4, 4, 4], 
+        [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],  
     ];
     aliensRows = [];
 
@@ -21,7 +21,10 @@ export default class AliensController {
     fireBulletTimerDefault = 100;
     fireBulletTimer = this.fireBulletTimerDefault;
 
-    constructor(canvas, alienBulletController, playerBulletController) {
+    constructor(canvas, alienBulletController, playerBulletController, level) {
+        for (let i = level - 1; i > 0; i--) {
+            this.aliensMap.push(this.aliensMap[i])
+        }
         this.canvas = canvas;
         this.alienBulletController = alienBulletController;
         this.playerBulletController = playerBulletController;

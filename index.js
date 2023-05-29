@@ -66,7 +66,8 @@ function checkLevelChange() {
         alienBulletController = new bulletController(canvas, 5, "blue", false);
         alienController = new AliensController(canvas, 
             alienBulletController,
-            playerBulletController);
+            playerBulletController, 
+            level);
         player = new CreatePlayer(canvas, 3, playerBulletController);
     }
 }
