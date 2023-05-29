@@ -18,9 +18,12 @@ export default class AliensController {
     defaultYVelocity = 1; 
     moveDownTimerDefault = 30;
     moveDownTimer = this.moveDownTimerDefault;
+    fireBulletTimerDefault = 100;
+    fireBulletTimer = this.fireBulletTimerDefault;
 
-    constructor(canvas) {
+    constructor(canvas, alienBulletController) {
         this.canvas = canvas;
+        this.alienBulletController = alienBulletController;
         this.createAliens();
     }
 
@@ -29,9 +32,20 @@ export default class AliensController {
         this.updateVelocityAndDirection()
         this.drawAliens(ctx);
         this.resetMoveDownTimer();
-        console.log(this.moveDownTimer);
+        this.fireBullet();
     }
 
+    fireBullet() {
+        this.fireBulletTimer--;
+        if(this.fireBulletTimer <= 0) {
+            this.fireBulletTimer = this.fireBulletTimerDefault;
+            const allAliens = this.aliensRows.flat();
+            const alienIndex = Math.floor(Math.random() * allAliens.length);
+            const alien = allAliens[alienIndex];
+            this.alienBulletController.shoot(alien.x, alien.y, -3);
+            console.log(alienIndex);
+        }
+    }
     resetMoveDownTimer() {
         if (this.moveDownTimer <= 0) {
             this.moveDownTimer = this.moveDownTimerDefault;
