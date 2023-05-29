@@ -5,33 +5,34 @@ import AliensController from "./AliensController.js";
 const fps = 60;
 const canvas = document.getElementById('gameboard');
 const sound = new Audio('sounds/music.mp3');
-sound.volume = 0.01;
+sound.volume = 0.1;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
 
-const intro = new Image();
-intro.src = 'images/intro.jpg';
-
 const background = new Image();
-background.src = 'images/mars.jpg';
-
-const playerBulletController = new bulletController(canvas, 10, "red", true);
-const alienBulletController = new bulletController(canvas, 5, "blue", false);
-const alienController = new AliensController(canvas, 
-    alienBulletController,
-    playerBulletController);
-const player = new CreatePlayer(canvas, 3, playerBulletController);
+background.src = 'images/background.jpg';
+    
+let playerBulletController = new bulletController(canvas, 10, "red", true);
+let alienBulletController = new bulletController(canvas, 5, "blue", false);
+let alienController = new AliensController(canvas, 
+        alienBulletController,
+        playerBulletController);
+let player = new CreatePlayer(canvas, 3, playerBulletController);
 
 let isGameOver = false;
 let didWin = false;
+let level = 1;
 
 function game() {
+    
+    // checkGameOver();
     sound.play();
-    checkGameOver();
+    checkLevelChange();
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     displayGameOver();
-    if(!isGameOver){
+
+    if(!isGameOver) {
     alienController.draw(ctx);
     player.draw(ctx)
     playerBulletController.draw(ctx);
@@ -49,21 +50,35 @@ function displayGameOver() {
     }
 }
 
-function checkGameOver() {
-    if(isGameOver) {
-
-        return;
-    }
-    if(alienBulletController.collideWith(player)){
-        isGameOver = true;
-    }
-    if(alienController.collideWith(player)) {
-        isGameOver = true;
-    }
+function checkLevelChange() {
     if(alienController.aliensRows.length === 0) {
-        didWin = true;
-        isGameOver = true;
+        level ++;
+        console.log(level)
+        console.log("Next level on") 
+        playerBulletController = new bulletController(canvas, 10, "red", true);
+        alienBulletController = new bulletController(canvas, 5, "blue", false);
+        alienController = new AliensController(canvas, 
+            alienBulletController,
+            playerBulletController);
+        player = new CreatePlayer(canvas, 3, playerBulletController);
     }
 }
+
+// function checkGameOver() {
+//     if(isGameOver) {
+//         return;
+//     }
+//     if(alienBulletController.collideWith(player)){
+//         isGameOver = true;
+//     }
+//     if(alienController.collideWith(player)) {
+//         isGameOver = true;
+//     }
+//     if(alienController.aliensRows.length === 0) {
+//         didWin = true;
+//         isGameOver = true;
+//         console.log("Next level possibility ")
+//     }
+// }
 
 setInterval(game, 1000/fps)
