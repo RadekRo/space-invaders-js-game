@@ -18,7 +18,7 @@ export default class AliensController {
     defaultYVelocity = 1; 
     moveDownTimerDefault = 30;
     moveDownTimer = this.moveDownTimerDefault;
-    fireBulletTimerDefault = 100;
+    fireBulletTimerDefault = 80;  
     fireBulletTimer = this.fireBulletTimerDefault;
 
     constructor(canvas, alienBulletController, playerBulletController, level) {
