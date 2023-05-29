@@ -28,7 +28,7 @@ let level = 1;
 
 function game() {
     
-    // checkGameOver();
+    checkGameOver();
     sound.play();
     checkLevelChange();
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
@@ -72,21 +72,16 @@ function checkLevelChange() {
     }
 }
 
-// function checkGameOver() {
-//     if(isGameOver) {
-//         return;
-//     }
-//     if(alienBulletController.collideWith(player)){
-//         isGameOver = true;
-//     }
-//     if(alienController.collideWith(player)) {
-//         isGameOver = true;
-//     }
-//     if(alienController.aliensRows.length === 0) {
-//         didWin = true;
-//         isGameOver = true;
-//         console.log("Next level possibility ")
-//     }
-// }
+function checkGameOver() {
+    if(isGameOver) {
+        return;
+    }
+    if(alienBulletController.collideWith(player)){
+        isGameOver = true;
+    }
+    if(alienController.collideWith(player)) {
+        isGameOver = true;
+    }
+}
 
 setInterval(game, 1000/fps)
