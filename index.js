@@ -21,17 +21,44 @@ const alienBulletController = new bulletController(canvas, 5, "blue", false);
 const alienController = new AliensController(canvas, 
     alienBulletController,
     playerBulletController);
-
-
 const player = new CreatePlayer(canvas, 3, playerBulletController);
 
+let isGameOver = false;
+let didWin = false;
+
 function game() {
+    checkGameOver();
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    displayGameOver();
+    if(!isGameOver){
     alienController.draw(ctx);
     player.draw(ctx)
     playerBulletController.draw(ctx);
     sound.play();
     alienBulletController.draw(ctx);
+    }
+}
+
+function displayGameOver() {
+    if(isGameOver) {
+        let text = didWin ? "You win" : "Game Over";
+        let textOffset = didWin ? 3.5 : 5;
+        ctx.fillStyle = "red";
+        ctx.font = "65px Verdana";
+        ctx.fillText(text, canvas.width / textOffset, canvas.height / 2);
+    }
+}
+
+function checkGameOver() {
+    if(isGameOver) {
+        return;
+    }
+    if(alienBulletController.collideWith(player)){
+        isGameOver = true;
+    }
+    if(alienController.collideWith(player)) {
+        isGameOver = true;
+    }
 }
 
 setInterval(game, 1000/fps)

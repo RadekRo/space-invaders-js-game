@@ -134,6 +134,10 @@ export default class AliensController {
             })
         })
     }
+
+    collideWith(sprite) {
+        return this.aliensRows.flat().some(alien => alien.collideWith(sprite))
+    }
 }
     
     
