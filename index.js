@@ -27,6 +27,7 @@ let isGameOver = false;
 let didWin = false;
 
 function game() {
+    sound.play();
     checkGameOver();
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     displayGameOver();
@@ -34,7 +35,6 @@ function game() {
     alienController.draw(ctx);
     player.draw(ctx)
     playerBulletController.draw(ctx);
-    sound.play();
     alienBulletController.draw(ctx);
     }
 }
