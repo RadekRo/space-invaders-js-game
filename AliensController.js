@@ -21,18 +21,32 @@ export default class AliensController {
     fireBulletTimerDefault = 100;
     fireBulletTimer = this.fireBulletTimerDefault;
 
-    constructor(canvas, alienBulletController) {
+    constructor(canvas, alienBulletController, playerBulletController) {
         this.canvas = canvas;
         this.alienBulletController = alienBulletController;
+        this.playerBulletController = playerBulletController;
         this.createAliens();
     }
 
     draw(ctx) {
         this.decrementMoveDownTimer();
         this.updateVelocityAndDirection()
+        this.collisionDetection();
         this.drawAliens(ctx);
         this.resetMoveDownTimer();
         this.fireBullet();
+    }
+
+    collisionDetection() {
+        this.aliensRows.forEach(alienRow=>{
+            alienRow.forEach((alien, alienIndex)=>{
+                if(this.playerBulletController.collideWith(alien)) {
+                    //play a sound
+                    alienRow.splice(alienIndex,1)
+                }
+            });
+        });
+        this.aliensRows = this.aliensRows.filter(alienRow => alienRow.length > 0)
     }
 
     fireBullet() {

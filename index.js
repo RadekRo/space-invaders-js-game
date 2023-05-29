@@ -18,7 +18,9 @@ background.src = 'images/background.jpg';
 
 const playerBulletController = new bulletController(canvas, 10, "red", true);
 const alienBulletController = new bulletController(canvas, 5, "blue", false);
-const alienController = new AliensController(canvas, alienBulletController);
+const alienController = new AliensController(canvas, 
+    alienBulletController,
+    playerBulletController);
 
 
 const player = new CreatePlayer(canvas, 3, playerBulletController);
@@ -29,6 +31,7 @@ function game() {
     player.draw(ctx)
     playerBulletController.draw(ctx);
     sound.play();
+    alienBulletController.draw(ctx);
 }
 
 setInterval(game, 1000/fps)
