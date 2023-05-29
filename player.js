@@ -18,6 +18,9 @@ export default class CreatePlayer {
         this.image = new Image();
         this.image.src = 'images/player_ship.png';
 
+        this.playerDeadSound = new Audio("sounds/playerDeadSound.mp3");
+        this.playerDeadSound.volume = 0.8;
+
         document.addEventListener('keydown', this.keydown);
         document.addEventListener('keyup', this.keyup);
     }

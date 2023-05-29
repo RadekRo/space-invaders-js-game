@@ -5,7 +5,7 @@ import AliensController from "./AliensController.js";
 const fps = 60;
 const canvas = document.getElementById('gameboard');
 const sound = new Audio('sounds/music.mp3');
-sound.volume = 0.03;
+sound.volume = 0.01;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
@@ -51,6 +51,7 @@ function displayGameOver() {
 
 function checkGameOver() {
     if(isGameOver) {
+
         return;
     }
     if(alienBulletController.collideWith(player)){

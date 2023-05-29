@@ -26,7 +26,7 @@ export default class AliensController {
         this.alienBulletController = alienBulletController;
         this.playerBulletController = playerBulletController;
         this.alienDeatSound = new Audio('sounds/alienDeathSound.mp3')
-        this.alienDeatSound.volume = 0.5;
+        this.alienDeatSound.volume = 0.4;
         this.createAliens();
     }
 
