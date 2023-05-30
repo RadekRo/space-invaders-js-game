@@ -12,7 +12,7 @@ const level_info = ['Level: 1 | Protect Mother Earth',
                     'Level: 3 | Humans strikes back', 
                     'Level: 4 | Final battle'];
 
-sound.volume = 0.01;
+sound.volume = 0.1;
 let ctx = canvas.getContext('2d');
 canvas.height = 600;
 canvas.width = 600;
@@ -50,19 +50,21 @@ function game() {
 
 function displayGameOver() {
     if(isGameOver) {
-        let text = didWin ? "You win" : "You are dead.";
+        let text = didWin ? "You win" : "You are dead";
         let textOffset = didWin ? 3.5 : 6.2;
         ctx.fillStyle = "red";
         ctx.font = "65px Verdana";
         ctx.fillText(text, canvas.width / textOffset, canvas.height / 2);
         if (!didWin) {
             player.playerDeadSound.play();
-            text = "Game over.";
+            text = "Game over";
             textOffset = 3.7;
             ctx.fillStyle = "yellow";
             ctx.font = "50px Verdana";
             ctx.fillText(text, canvas.width / textOffset, canvas.height / 2 + 55);
         } 
+        sound.pause();
+        sound.currentTime = 0;
         clearInterval(intervalID);
     }
 }
