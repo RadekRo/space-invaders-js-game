@@ -2,9 +2,11 @@ import CreatePlayer from './player.js';
 import bulletController from './bulletController.js';
 import AliensController from "./AliensController.js";
 
+
 const fps = 60;
 const canvas = document.getElementById('gameboard');
 const levelInfo = document.getElementById('level');
+let isSoundOn = true;
 const sound = new Audio('sounds/music.mp3');
 const background_graphics = ['earth', 'earth_from_moon', 'outer_space', 'mars'];
 const level_info = ['Level: 1 | Protect Mother Earth', 
@@ -32,10 +34,19 @@ let isGameOver = false;
 let didWin = false;
 let level = 1;
 
+document.addEventListener('keydown', toggleSound);
+ 
+function toggleSound(event) {
+    if (event.code === "KeyS") {
+        isSoundOn === true ? isSoundOn = false : isSoundOn = true;
+    }
+}
+
+
 function game() {
     
+    checkSound();
     checkGameOver();
-    sound.play();
     checkLevelChange();
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     displayGameOver();
@@ -101,5 +112,13 @@ function checkGameOver() {
     }
 }
 
-let intervalID = setInterval(game, 1000/fps)
+function checkSound() {
+    if (isSoundOn === true) {
+        sound.play();
+    } else {
+        sound.pause();
+        sound.currentTime = 0;
+    }
+}
 
+let intervalID = setInterval(game, 1000/fps)
