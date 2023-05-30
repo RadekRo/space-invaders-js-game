@@ -45,7 +45,7 @@ function game() {
     player.draw(ctx)
     playerBulletController.draw(ctx);
     alienBulletController.draw(ctx);
-    }
+    } 
 }
 
 function displayGameOver() {
@@ -56,12 +56,14 @@ function displayGameOver() {
         ctx.font = "65px Verdana";
         ctx.fillText(text, canvas.width / textOffset, canvas.height / 2);
         if (!didWin) {
+            player.playerDeadSound.play();
             text = "Game over.";
             textOffset = 3.7;
             ctx.fillStyle = "yellow";
             ctx.font = "50px Verdana";
             ctx.fillText(text, canvas.width / textOffset, canvas.height / 2 + 55);
-        }
+        } 
+        clearInterval(intervalID);
     }
 }
 
@@ -87,7 +89,7 @@ function checkLevelChange() {
 
 function checkGameOver() {
     if(isGameOver) {
-        return;
+       return;
     }
     if(alienBulletController.collideWith(player)){
         isGameOver = true;
@@ -97,5 +99,5 @@ function checkGameOver() {
     }
 }
 
-setInterval(game, 1000/fps)
+let intervalID = setInterval(game, 1000/fps)
 
